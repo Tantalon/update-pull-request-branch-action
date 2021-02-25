@@ -2130,7 +2130,7 @@ const main = async () => {
             ...context.repo,
             pull_number: number
           })
-          prUpdated = res.data.head.sha === oldSha
+          prUpdated = res.data.head.sha !== oldSha
         }
       }
     } else {
