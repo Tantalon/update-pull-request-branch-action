@@ -1,8 +1,8 @@
 # update-pull-request-branch-action
 
-Update pull requests when their base branches change.
+Update a Pull Request from its base branch.
 
-Optionally, waits until the branch has been successfully updated,
+Optionally waits until the branch has been successfully updated,
 as the REST api route [doesn't](https://developer.github.com/v3/pulls/#response-3).
 
 ## Usage
@@ -17,13 +17,13 @@ steps:
       github-token: ${{ secrets.GITHUB_TOKEN }}
 ```
 
-To update all pull requests asynchronously:
+To update all pull requests without waiting:
 ```yaml
 steps:
   - name: Update All Pull Requests
     uses: juliangruber/update-pull-request-branch-action@v1
     with:
-      async: true
+      waitForPullRequestUpdated: false
       github-token: ${{ secrets.GITHUB_TOKEN }}
 ```
 
